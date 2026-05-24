@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PORTIFÓLIO 2026</title>
+
+<link rel="icon" type="image/png" href="./assets/logo.png">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#05050c;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.header{
+  width:100%;
+  height:92px;
+
+  padding:0 7%;
+
+  background:#080713;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  border-bottom:1px solid rgba(190,0,255,.35);
+
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:16px;
+
+  text-decoration:none;
+}
+
+.logo img{
+  width:58px;
+  height:58px;
+
+  object-fit:contain;
+
+  filter:
+  drop-shadow(0 0 12px rgba(255,0,255,.45))
+  drop-shadow(0 0 28px rgba(162,0,255,.35));
+
+  transition:.35s;
+}
+
+.logo:hover img{
+  transform:scale(1.06) rotate(-3deg);
+}
+
+.logo span{
+  color:#d65cff;
+
+  font-weight:900;
+  font-size:21px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+/* ========================= */
+/* MENU */
+/* ========================= */
+
+.menu{
+  display:flex;
+  gap:38px;
+}
+
+.menu a{
+  color:#fff;
+
+  text-decoration:none;
+
+  font-size:14px;
+  font-weight:700;
+
+  transition:.3s;
+}
+
+.menu a:hover{
+  color:#d65cff;
+}
+
+/* ========================= */
+/* BOTÕES */
+/* ========================= */
+
+.btn-header,
+.btn-hero,
+.about-btn{
+
+  position:relative;
+
+  width:340px;
+  height:64px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  color:#ffffff;
+
+  font-size:17px;
+  font-weight:900;
+
+  text-transform:uppercase;
+  letter-spacing:.5px;
+
+  border-radius:14px;
+
+  border:2px solid #ff00ff;
+
+  background:
+  linear-gradient(
+  180deg,
+  rgba(45,0,75,.95) 0%,
+  rgba(24,0,44,.96) 100%
+  );
+
+  box-shadow:
+  0 0 8px rgba(255,0,255,.9),
+  0 0 18px rgba(255,0,255,.6),
+  inset 0 0 12px rgba(255,255,255,.08);
+
+  overflow:hidden;
+
+  transition:
+  transform .35s ease,
+  box-shadow .35s ease,
+  border-color .35s ease;
+}
+
+.btn-header::before,
+.btn-hero::before,
+.about-btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:4px;
+
+  border-radius:10px;
+
+  border:1px solid rgba(255,0,255,.45);
+
+  pointer-events:none;
+}
+
+.btn-header::after,
+.btn-hero::after,
+.about-btn::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:120%;
+  height:220%;
+
+  background:
+  radial-gradient(
+  circle,
+  rgba(255,0,255,.18) 0%,
+  transparent 70%
+  );
+
+  top:-60%;
+  left:-10%;
+
+  opacity:0;
+
+  transition:.4s;
+}
+
+.btn-header:hover,
+.btn-hero:hover,
+.about-btn:hover{
+
+  transform:translateY(-4px) scale(1.03);
+
+  border-color:#ff4dff;
+
+  box-shadow:
+  0 0 12px rgba(255,0,255,1),
+  0 0 30px rgba(255,0,255,.85),
+  0 0 60px rgba(149,0,255,.75),
+  inset 0 0 18px rgba(255,255,255,.12);
+}
+
+.btn-header:hover::after,
+.btn-hero:hover::after,
+.about-btn:hover::after{
+  opacity:1;
+}
+
+.btn-header{
+  width:250px;
+  height:58px;
+  font-size:15px;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+  width:100%;
+  height:calc(100vw * 900 / 1920);
+
+  min-height:520px;
+  max-height:900px;
+
+  background-image:url("./assets/hero.png");
+
+  background-size:100% 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  align-items:center;
+
+  padding-left:7%;
+}
+
+.hero-content{
+  width:560px;
+}
+
+.hero h2{
+  font-size:78px;
+  line-height:.9;
+
+  font-style:italic;
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  color:#e000ff;
+
+  margin-bottom:30px;
+
+  text-shadow:
+  5px 5px 0 #006dff,
+  0 5px 14px #000,
+  0 0 24px rgba(224,0,255,.9);
+}
+
+.hero p{
+  max-width:470px;
+
+  font-size:16px;
+  line-height:1.7;
+
+  color:#fff;
+
+  margin-bottom:42px;
+
+  text-shadow:0 3px 8px #000;
+}
+
+/* ========================= */
+/* SERVIÇOS */
+/* ========================= */
+
+.services{
+  width:100%;
+
+  padding:70px 4% 90px;
+
+  background:#050612;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.services-top,
+.portfolio-top{
+  text-align:center;
+  margin-bottom:44px;
+}
+
+.services-top span,
+.portfolio-top span,
+.about-content span{
+  display:block;
+
+  color:#a63cff;
+
+  font-size:16px;
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  margin-bottom:16px;
+}
+
+.services-top h3,
+.portfolio-top h3,
+.about-content h3{
+  font-size:38px;
+  line-height:1.1;
+
+  font-weight:800;
+
+  text-transform:uppercase;
+
+  color:#e9e9ef;
+
+  margin-bottom:18px;
+}
+
+.services-top p{
+  width:620px;
+  max-width:100%;
+
+  margin:0 auto;
+
+  font-size:15px;
+  line-height:1.6;
+
+  color:#d6d6df;
+}
+
+/* ========================= */
+/* GRID SERVIÇOS */
+/* ========================= */
+
+.services-grid{
+  width:100%;
+  max-width:1800px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:22px;
+}
+
+/* ========================= */
+/* CARD AJUSTADO */
+/* ========================= */
+
+.service-card{
+
+  width:100%;
+
+  aspect-ratio:1080 / 1536;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  background:#09071a;
+
+  border:2px solid rgba(255,0,255,.45);
+
+  box-shadow:
+  0 0 22px rgba(255,0,255,.18),
+  inset 0 0 24px rgba(255,0,255,.10);
+
+  transition:.35s;
+}
+
+.service-card:hover{
+
+  transform:
+  translateY(-10px)
+  scale(1.02);
+
+  box-shadow:
+  0 0 40px rgba(255,0,255,.35),
+  inset 0 0 28px rgba(255,0,255,.14);
+}
+
+/* ========================= */
+/* IMAGEM */
+/* ========================= */
+
+.service-img{
+
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:contain;
+
+  background:#05050c;
+}
+
+/* ========================= */
+/* PORTFÓLIO */
+/* ========================= */
+
+.portfolio{
+  width:100%;
+
+  padding:80px 5% 100px;
+
+  background:#050612;
+}
+
+.portfolio-grid{
+  width:100%;
+  max-width:1700px;
+
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:34px;
+}
+
+.portfolio-card{
+  width:100%;
+  aspect-ratio:16 / 9;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  background:#09071a;
+
+  border:2px solid rgba(204,0,255,.65);
+
+  box-shadow:
+  0 0 24px rgba(204,0,255,.35),
+  inset 0 0 24px rgba(204,0,255,.15);
+
+  transition:.35s;
+}
+
+.portfolio-card:hover{
+  transform:translateY(-8px) scale(1.02);
+
+  box-shadow:
+  0 0 35px rgba(204,0,255,.75),
+  inset 0 0 30px rgba(204,0,255,.22);
+}
+
+.portfolio-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  display:block;
+}
+
+/* ========================= */
+/* SOBRE */
+/* ========================= */
+
+.about{
+  width:100%;
+
+  padding:110px 0;
+
+  background:#05050c;
+
+  position:relative;
+  overflow:hidden;
+}
+
+.about-band{
+  width:100%;
+  min-height:520px;
+
+  background:
+  radial-gradient(circle at 85% 50%, rgba(168,60,255,.35), transparent 34%),
+  linear-gradient(90deg,#090014 0%,#12001f 48%,#05050c 100%);
+
+  border-top:1px solid rgba(255,0,255,.25);
+  border-bottom:1px solid rgba(255,0,255,.25);
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+}
+
+.about-container{
+  width:100%;
+  max-width:1180px;
+
+  margin:0 auto;
+  padding:0 5%;
+
+  display:grid;
+  grid-template-columns:1fr 520px;
+
+  align-items:center;
+
+  gap:60px;
+
+  position:relative;
+  z-index:2;
+}
+
+.about-content{
+  max-width:560px;
+}
+
+.about-content p{
+  font-size:16px;
+  line-height:1.9;
+
+  color:#e5e0ec;
+
+  margin-bottom:18px;
+
+  text-align:justify;
+}
+
+.about-image{
+  height:620px;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+
+  position:relative;
+}
+
+.about-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+  object-position:bottom center;
+
+  display:block;
+
+  filter:drop-shadow(0 0 40px rgba(204,0,255,.65));
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer{
+  width:100%;
+
+  padding:40px 7%;
+
+  background:#070710;
+
+  border-top:1px solid rgba(255,0,255,.18);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.footer-logo img{
+  width:54px;
+  height:54px;
+
+  object-fit:contain;
+
+  filter:
+  drop-shadow(0 0 12px rgba(255,0,255,.4))
+  drop-shadow(0 0 22px rgba(162,0,255,.3));
+}
+
+.footer-logo span{
+  color:#d65cff;
+
+  font-size:20px;
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+}
+
+.footer p{
+  color:#bdbdc7;
+  font-size:14px;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media(max-width:1200px){
+
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:900px){
+
+  .portfolio-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-container{
+    grid-template-columns:1fr;
+  }
+
+  .about-image{
+    height:560px;
+    order:-1;
+  }
+
+  .footer{
+    flex-direction:column;
+    gap:20px;
+    text-align:center;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .header{
+    height:auto;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    padding:20px 5%;
+  }
+
+  .menu{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+  }
+
+  .hero{
+    min-height:720px;
+
+    background-size:cover;
+    background-position:center top;
+
+    padding:170px 5% 80px;
+  }
+
+  .hero h2{
+    font-size:48px;
+  }
+
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+
+  .services-top h3,
+  .portfolio-top h3,
+  .about-content h3{
+    font-size:30px;
+  }
+
+  .portfolio-card{
+    aspect-ratio:16 / 9;
+  }
+
+  .about{
+    padding:70px 0;
+  }
+
+  .about-band{
+    min-height:auto;
+    padding:70px 0;
+  }
+
+  .about-content p{
+    font-size:15px;
+  }
+
+  .about-image{
+    height:480px;
+  }
+
+  .about-btn,
+  .btn-hero,
+  .btn-header{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <a href="#" class="logo">
+
+    <img src="./assets/logo.png" alt="Logo">
+
+    <span>PORTIFÓLIO 2026</span>
+
+  </a>
+
+  <nav class="menu">
+    <a href="#">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#">Depoimentos</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <a class="btn-header" href="https://wa.me/5591982099096" target="_blank">
+    FALE NO WHATSAPP
+  </a>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h2>
+      IMAGENS QUE ATRAEM E CONECTAM PESSOAS
+    </h2>
+
+    <p>
+      Transformo ideias em identidades visuais marcantes, interfaces modernas e conteúdos criativos que fortalecem marcas, geram conexão e fazem sua presença digital se destacar.
+    </p>
+
+    <a class="btn-hero" href="https://wa.me/5591982099096" target="_blank">
+      FALE COMIGO AGORA
+    </a>
+
+  </div>
+
+</section>
+
+<!-- SERVIÇOS -->
+
+<section class="services" id="servicos">
+
+  <div class="services-top">
+
+    <span>SERVIÇOS</span>
+
+    <h3>
+      SOLUÇÕES QUE GERAM RESULTADOS
+    </h3>
+
+    <p>
+      Crio projetos visuais modernos, experiências digitais e conteúdos criativos
+      para fortalecer marcas e gerar conexão com o público.
+    </p>
+
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="./assets/designergrafico.png" class="service-img">
+    </div>
+
+    <div class="service-card">
+      <img src="./assets/python.png" class="service-img">
+    </div>
+
+    <div class="service-card">
+      <img src="./assets/front.png" class="service-img">
+    </div>
+
+    <div class="service-card">
+      <img src="./assets/socialmedia.png" class="service-img">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PORTFÓLIO -->
+
+<section class="portfolio" id="portfolio">
+
+  <div class="portfolio-top">
+
+    <span>PORTFÓLIO</span>
+
+    <h3>
+      ALGUNS PROJETOS
+    </h3>
+
+  </div>
+
+  <div class="portfolio-grid">
+
+    <!-- PRIMEIRO CARD COM LINK -->
+
+    <div class="portfolio-card">
+      <a href="projeto.html" target="_blank">
+        <img src="./assets/designergrafico.png">
+      </a>
+    </div>
+
+    <div class="portfolio-card">
+      <img src="./assets/python.png">
+    </div>
+
+    <div class="portfolio-card">
+      <img src="./assets/front.png">
+    </div>
+
+    <div class="portfolio-card">
+      <img src="./assets/socialmedia.png">
+    </div>
+
+    <div class="portfolio-card">
+      <img src="./assets/hero.png">
+    </div>
+
+    <div class="portfolio-card">
+      <img src="./assets/designergrafico.png">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SOBRE -->
+
+<section class="about" id="sobre">
+
+  <div class="about-band">
+
+    <div class="about-container">
+
+      <div class="about-content">
+
+        <span>SOBRE MIM</span>
+
+        <h3>
+          QUEM SOU EU
+        </h3>
+
+        <p>
+          Sou Arthur Borges Gomes, designer gráfico, social media e desenvolvedor de páginas web. Trabalho criando identidades visuais, artes profissionais, interfaces modernas, automações em Python e soluções digitais para marcas que querem se destacar.
+        </p>
+
+        <p>
+          Meu objetivo é transformar ideias em imagens que atraem, conectam pessoas e fortalecem a presença digital de negócios, projetos e profissionais.
+        </p>
+
+        <a href="https://wa.me/5591982099096" target="_blank" class="about-btn">
+          FALE COMIGO AGORA
+        </a>
+
+      </div>
+
+      <div class="about-image">
+
+        <img
+          src="./assets/eu.png"
+          alt="Arthur Borges"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <div class="footer-logo">
+
+    <img src="./assets/logo.png" alt="Logo">
+
+    <span>PORTIFÓLIO 2026</span>
+
+  </div>
+
+  <p>
+    © 2026 • Arthur Borges Gomes • Todos os direitos reservados.
+  </p>
+
+</footer>
+
+</body>
+</html>
