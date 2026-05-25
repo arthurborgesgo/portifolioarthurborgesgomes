@@ -1,731 +1,728 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PORTIFÓLIO 2026</title>
+<title>Portfólio Neon</title>
 
-<link rel="icon" type="image/png" href="./assets/logo.png">
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#05050c;
-  color:#fff;
-  overflow-x:hidden;
+background:#030714;
+font-family:'Inter',sans-serif;
+color:#fff;
+overflow-x:hidden;
 }
 
-/* ========================= */
 /* HEADER */
-/* ========================= */
 
-.header{
-  width:100%;
-  height:92px;
-
-  padding:0 7%;
-
-  background:#080713;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  border-bottom:1px solid rgba(190,0,255,.35);
-
-  position:sticky;
-  top:0;
-  z-index:999;
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:90px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 60px;
+background:rgba(3,7,20,.95);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(216,60,255,.2);
+z-index:999;
 }
-
-/* ========================= */
-/* LOGO */
-/* ========================= */
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:16px;
-
-  text-decoration:none;
+display:flex;
+align-items:center;
+gap:14px;
 }
 
 .logo img{
-  width:58px;
-  height:58px;
+width:52px;
+height:52px;
+object-fit:contain;
 
-  object-fit:contain;
-
-  filter:
-  drop-shadow(0 0 12px rgba(255,0,255,.45))
-  drop-shadow(0 0 28px rgba(162,0,255,.35));
-
-  transition:.35s;
+filter:
+drop-shadow(0 0 10px rgba(216,60,255,.8))
+drop-shadow(0 0 22px rgba(216,60,255,.4));
 }
 
-.logo:hover img{
-  transform:scale(1.06) rotate(-3deg);
+.logo h1{
+font-family:'Oswald',sans-serif;
+font-size:30px;
+color:#d83cff;
 }
 
-.logo span{
-  color:#d65cff;
-
-  font-weight:900;
-  font-size:21px;
-
-  letter-spacing:1px;
-
-  text-transform:uppercase;
+nav{
+display:flex;
+gap:34px;
 }
 
-/* ========================= */
-/* MENU */
-/* ========================= */
-
-.menu{
-  display:flex;
-  gap:38px;
+nav a{
+color:#fff;
+text-decoration:none;
+font-size:15px;
+font-weight:500;
+transition:.3s;
 }
 
-.menu a{
-  color:#fff;
-
-  text-decoration:none;
-
-  font-size:14px;
-  font-weight:700;
-
-  transition:.3s;
+nav a:hover{
+color:#d83cff;
 }
 
-.menu a:hover{
-  color:#d65cff;
+/* BOTÕES - Padrão */
+
+.btn-header, .btn-hero{
+border:2px solid #d83cff;
+border-radius:8px;
+background:rgba(216,60,255,.08);
+color:#fff;
+text-decoration:none;
+transition:.3s;
 }
 
-/* ========================= */
-/* BOTÕES */
-/* ========================= */
-
-.btn-header,
-.btn-hero,
-.about-btn{
-
-  position:relative;
-
-  width:340px;
-  height:64px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-decoration:none;
-
-  color:#ffffff;
-
-  font-size:17px;
-  font-weight:900;
-
-  text-transform:uppercase;
-  letter-spacing:.5px;
-
-  border-radius:14px;
-
-  border:2px solid #ff00ff;
-
-  background:
-  linear-gradient(
-  180deg,
-  rgba(45,0,75,.95) 0%,
-  rgba(24,0,44,.96) 100%
-  );
-
-  box-shadow:
-  0 0 8px rgba(255,0,255,.9),
-  0 0 18px rgba(255,0,255,.6),
-  inset 0 0 12px rgba(255,255,255,.08);
-
-  overflow:hidden;
-
-  transition:
-  transform .35s ease,
-  box-shadow .35s ease,
-  border-color .35s ease;
+.btn-header:hover, .btn-hero:hover{
+background:#d83cff;
+transform:translateY(-4px);
 }
 
-.btn-header::before,
-.btn-hero::before,
-.about-btn::before{
-
-  content:"";
-
-  position:absolute;
-
-  inset:4px;
-
-  border-radius:10px;
-
-  border:1px solid rgba(255,0,255,.45);
-
-  pointer-events:none;
-}
-
-.btn-header::after,
-.btn-hero::after,
-.about-btn::after{
-
-  content:"";
-
-  position:absolute;
-
-  width:120%;
-  height:220%;
-
-  background:
-  radial-gradient(
-  circle,
-  rgba(255,0,255,.18) 0%,
-  transparent 70%
-  );
-
-  top:-60%;
-  left:-10%;
-
-  opacity:0;
-
-  transition:.4s;
-}
-
-.btn-header:hover,
-.btn-hero:hover,
-.about-btn:hover{
-
-  transform:translateY(-4px) scale(1.03);
-
-  border-color:#ff4dff;
-
-  box-shadow:
-  0 0 12px rgba(255,0,255,1),
-  0 0 30px rgba(255,0,255,.85),
-  0 0 60px rgba(149,0,255,.75),
-  inset 0 0 18px rgba(255,255,255,.12);
-}
-
-.btn-header:hover::after,
-.btn-hero:hover::after,
-.about-btn:hover::after{
-  opacity:1;
-}
+/* Variação: Header */
 
 .btn-header{
-  width:250px;
-  height:58px;
-  font-size:15px;
+padding:14px 26px;
+font-weight:700;
+
+box-shadow:
+0 0 20px rgba(216,60,255,.55);
 }
 
-/* ========================= */
 /* HERO */
-/* ========================= */
 
 .hero{
-  width:100%;
-  height:calc(100vw * 900 / 1920);
+width:100%;
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:160px 80px 100px;
+position:relative;
+overflow:hidden;
 
-  min-height:520px;
-  max-height:900px;
+background:
+linear-gradient(
+90deg,
+rgba(3,7,20,.98) 0%,
+rgba(3,7,20,.72) 35%,
+rgba(3,7,20,.15) 70%
+),
 
-  background-image:url("./assets/hero.png");
+url("assets/hero.png");
 
-  background-size:100% 100%;
-  background-position:center;
-  background-repeat:no-repeat;
-
-  display:flex;
-  align-items:center;
-
-  padding-left:7%;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 }
 
 .hero-content{
-  width:560px;
+max-width:650px;
+z-index:2;
 }
 
-.hero h2{
-  font-size:78px;
-  line-height:.9;
+.hero-subtitle{
+font-family:'Oswald',sans-serif;
+font-size:54px;
+line-height:1;
+margin-bottom:18px;
+font-style:italic;
+}
 
-  font-style:italic;
-  font-weight:900;
+.hero-title{
+font-family:'Oswald',sans-serif;
+font-size:72px;
+line-height:.95;
+font-style:italic;
 
-  text-transform:uppercase;
+background:linear-gradient(180deg,#ff3cff,#008cff);
 
-  color:#e000ff;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 
-  margin-bottom:30px;
-
-  text-shadow:
-  5px 5px 0 #006dff,
-  0 5px 14px #000,
-  0 0 24px rgba(224,0,255,.9);
+margin-bottom:30px;
 }
 
 .hero p{
-  max-width:470px;
-
-  font-size:16px;
-  line-height:1.7;
-
-  color:#fff;
-
-  margin-bottom:42px;
-
-  text-shadow:0 3px 8px #000;
+font-size:17px;
+line-height:1.8;
+color:#d6daea;
+max-width:580px;
+margin-bottom:40px;
 }
 
-/* ========================= */
+/* Variação: Hero */
+
+.btn-hero{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+padding:22px 42px;
+
+font-weight:800;
+font-size:18px;
+
+box-shadow:
+0 0 20px rgba(216,60,255,.7),
+inset 0 0 14px rgba(216,60,255,.2);
+}
+
+.btn-header svg, .btn-hero svg{
+width:18px;
+height:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+}
+
+/* SECTION */
+
+.section{
+padding:90px 60px;
+}
+
+.section-label{
+display:block;
+text-align:center;
+font-family:'Oswald',sans-serif;
+font-size:18px;
+letter-spacing:4px;
+color:#d83cff;
+margin-bottom:12px;
+}
+
+.section-title{
+text-align:center;
+font-family:'Oswald',sans-serif;
+font-size:56px;
+margin-bottom:18px;
+}
+
+.section-text{
+max-width:760px;
+margin:0 auto 60px;
+text-align:center;
+line-height:1.8;
+color:#c7ccdc;
+}
+
 /* SERVIÇOS */
-/* ========================= */
-
-.services{
-  width:100%;
-
-  padding:70px 4% 90px;
-
-  background:#050612;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-.services-top,
-.portfolio-top{
-  text-align:center;
-  margin-bottom:44px;
-}
-
-.services-top span,
-.portfolio-top span,
-.about-content span{
-  display:block;
-
-  color:#a63cff;
-
-  font-size:16px;
-  font-weight:900;
-
-  text-transform:uppercase;
-
-  margin-bottom:16px;
-}
-
-.services-top h3,
-.portfolio-top h3,
-.about-content h3{
-  font-size:38px;
-  line-height:1.1;
-
-  font-weight:800;
-
-  text-transform:uppercase;
-
-  color:#e9e9ef;
-
-  margin-bottom:18px;
-}
-
-.services-top p{
-  width:620px;
-  max-width:100%;
-
-  margin:0 auto;
-
-  font-size:15px;
-  line-height:1.6;
-
-  color:#d6d6df;
-}
-
-/* ========================= */
-/* GRID SERVIÇOS */
-/* ========================= */
 
 .services-grid{
-  width:100%;
-  max-width:1800px;
-
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-
-  gap:22px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
 }
 
-/* ========================= */
-/* CARD AJUSTADO */
-/* ========================= */
-
 .service-card{
+min-height:300px;
+padding:42px 28px;
+border-radius:12px;
 
-  width:100%;
+background:
+linear-gradient(
+145deg,
+rgba(216,60,255,.18),
+rgba(0,140,255,.06)
+);
 
-  aspect-ratio:1080 / 1536;
+border:1px solid rgba(216,60,255,.6);
 
-  border-radius:18px;
+transition:.3s;
+}
 
-  overflow:hidden;
-
-  background:#09071a;
-
-  border:2px solid rgba(255,0,255,.45);
-
-  box-shadow:
-  0 0 22px rgba(255,0,255,.18),
-  inset 0 0 24px rgba(255,0,255,.10);
-
-  transition:.35s;
+.service-card:nth-child(even){
+border-color:#008cff;
 }
 
 .service-card:hover{
-
-  transform:
-  translateY(-10px)
-  scale(1.02);
-
-  box-shadow:
-  0 0 40px rgba(255,0,255,.35),
-  inset 0 0 28px rgba(255,0,255,.14);
+transform:translateY(-8px);
 }
 
-/* ========================= */
-/* IMAGEM */
-/* ========================= */
+.service-logo{
+width:90px;
+height:90px;
+margin:0 auto 28px;
 
-.service-img{
+background:url("assets/logo.png");
 
-  width:100%;
-  height:100%;
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
 
-  display:block;
-
-  object-fit:contain;
-
-  background:#05050c;
+filter:
+drop-shadow(0 0 12px rgba(216,60,255,.8))
+drop-shadow(0 0 24px rgba(216,60,255,.5));
 }
 
-/* ========================= */
-/* PORTFÓLIO */
-/* ========================= */
-
-.portfolio{
-  width:100%;
-
-  padding:80px 5% 100px;
-
-  background:#050612;
+.service-card:nth-child(even) .service-logo{
+filter:
+drop-shadow(0 0 12px rgba(0,140,255,.8))
+drop-shadow(0 0 24px rgba(0,140,255,.5));
 }
 
-.portfolio-grid{
-  width:100%;
-  max-width:1700px;
-
-  margin:0 auto;
-
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-
-  gap:34px;
+.service-card h3{
+font-family:'Oswald',sans-serif;
+font-size:38px;
+line-height:1;
+text-align:center;
+margin-bottom:18px;
 }
 
-.portfolio-card{
-  width:100%;
-  aspect-ratio:16 / 9;
-
-  border-radius:18px;
-
-  overflow:hidden;
-
-  background:#09071a;
-
-  border:2px solid rgba(204,0,255,.65);
-
-  box-shadow:
-  0 0 24px rgba(204,0,255,.35),
-  inset 0 0 24px rgba(204,0,255,.15);
-
-  transition:.35s;
+.service-card p{
+text-align:center;
+line-height:1.7;
+color:#d4d8e7;
 }
 
-.portfolio-card:hover{
-  transform:translateY(-8px) scale(1.02);
+/* PORTFOLIO */
 
-  box-shadow:
-  0 0 35px rgba(204,0,255,.75),
-  inset 0 0 30px rgba(204,0,255,.22);
+.portfolio-wrapper{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:25px;
 }
 
-.portfolio-card img{
-  width:100%;
-  height:100%;
+.arrow{
+width:60px;
+height:60px;
+border-radius:50%;
+border:2px solid #d83cff;
+background:rgba(216,60,255,.08);
 
-  object-fit:cover;
-  object-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
 
-  display:block;
+font-size:28px;
+cursor:pointer;
+
+box-shadow:
+0 0 20px rgba(216,60,255,.6);
+
+transition:.3s;
 }
 
-/* ========================= */
+.arrow:hover{
+background:#d83cff;
+}
+
+.portfolio-items{
+display:flex;
+gap:30px;
+align-items:center;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding:20px 0;
+animation:scrollLeft 80s linear infinite;
+}
+
+.portfolio-items::-webkit-scrollbar{
+height:6px;
+}
+
+.portfolio-items::-webkit-scrollbar-track{
+background:rgba(216,60,255,.1);
+border-radius:10px;
+}
+
+.portfolio-items::-webkit-scrollbar-thumb{
+background:rgba(216,60,255,.5);
+border-radius:10px;
+}
+
+.portfolio-items::-webkit-scrollbar-thumb:hover{
+background:rgba(216,60,255,.8);
+}
+
+@keyframes scrollLeft{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(-100%);
+}
+}
+
+.project{
+width:250px;
+aspect-ratio:4/5;
+min-width:250px;
+
+border-radius:12px;
+overflow:hidden;
+
+opacity:1;
+transition:.4s;
+border:1px solid rgba(216,60,255,.3);
+}
+
+.project img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.project.active{
+width:250px;
+aspect-ratio:4/5;
+
+opacity:1;
+border:2px solid #d83cff;
+
+box-shadow:
+0 0 30px rgba(216,60,255,.8);
+}
+
+.dots{
+display:flex;
+justify-content:center;
+gap:14px;
+margin-top:35px;
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+background:#6120a9;
+}
+
+.dot.active{
+background:#ff3cff;
+}
+
 /* SOBRE */
-/* ========================= */
 
 .about{
-  width:100%;
-
-  padding:110px 0;
-
-  background:#05050c;
-
-  position:relative;
-  overflow:hidden;
-}
-
-.about-band{
-  width:100%;
-  min-height:520px;
-
-  background:
-  radial-gradient(circle at 85% 50%, rgba(168,60,255,.35), transparent 34%),
-  linear-gradient(90deg,#090014 0%,#12001f 48%,#05050c 100%);
-
-  border-top:1px solid rgba(255,0,255,.25);
-  border-bottom:1px solid rgba(255,0,255,.25);
-
-  position:relative;
-
-  display:flex;
-  align-items:center;
-}
-
-.about-container{
-  width:100%;
-  max-width:1180px;
-
-  margin:0 auto;
-  padding:0 5%;
-
-  display:grid;
-  grid-template-columns:1fr 520px;
-
-  align-items:center;
-
-  gap:60px;
-
-  position:relative;
-  z-index:2;
-}
-
-.about-content{
-  max-width:560px;
-}
-
-.about-content p{
-  font-size:16px;
-  line-height:1.9;
-
-  color:#e5e0ec;
-
-  margin-bottom:18px;
-
-  text-align:justify;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
 }
 
 .about-image{
-  height:620px;
+height:500px;
+border-radius:12px;
+overflow:hidden;
+border:2px solid #d83cff;
 
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-
-  position:relative;
+box-shadow:
+0 0 25px rgba(216,60,255,.4);
 }
 
 .about-image img{
-  width:100%;
-  height:100%;
-
-  object-fit:contain;
-  object-position:bottom center;
-
-  display:block;
-
-  filter:drop-shadow(0 0 40px rgba(204,0,255,.65));
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-/* ========================= */
+.about-content .section-label,
+.about-content .section-title{
+text-align:left;
+}
+
+.about-content p{
+line-height:1.9;
+color:#d4d7e5;
+margin-bottom:22px;
+}
+
+/* CTA */
+
+.cta{
+margin-top:70px;
+padding:40px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+
+border:1px solid #d83cff;
+border-radius:12px;
+
+box-shadow:
+0 0 24px rgba(216,60,255,.2),
+inset 0 0 20px rgba(216,60,255,.08);
+}
+
+.cta h2{
+font-family:'Oswald',sans-serif;
+font-size:54px;
+line-height:1.2;
+flex:1;
+}
+
+.cta .btn-hero{
+white-space:nowrap;
+flex-shrink:0;
+}
+
 /* FOOTER */
-/* ========================= */
 
-.footer{
-  width:100%;
+footer{
+margin-top:80px;
+background:#050916;
+border-top:1px solid rgba(216,60,255,.15);
+}
 
-  padding:40px 7%;
-
-  background:#070710;
-
-  border-top:1px solid rgba(255,0,255,.18);
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.footer-grid{
+padding:70px 60px;
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr 1fr;
+gap:60px;
 }
 
 .footer-logo{
-  display:flex;
-  align-items:center;
-  gap:16px;
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:25px;
 }
 
 .footer-logo img{
-  width:54px;
-  height:54px;
-
-  object-fit:contain;
-
-  filter:
-  drop-shadow(0 0 12px rgba(255,0,255,.4))
-  drop-shadow(0 0 22px rgba(162,0,255,.3));
+width:52px;
 }
 
-.footer-logo span{
-  color:#d65cff;
-
-  font-size:20px;
-  font-weight:900;
-
-  text-transform:uppercase;
-
-  letter-spacing:1px;
+.footer-logo h2{
+font-family:'Oswald',sans-serif;
+font-size:30px;
+color:#d83cff;
 }
 
-.footer p{
-  color:#bdbdc7;
-  font-size:14px;
+.footer-column h3{
+font-family:'Oswald',sans-serif;
+font-size:28px;
+margin-bottom:22px;
 }
 
-/* ========================= */
+.footer-column a,
+.footer-column p{
+display:block;
+margin-bottom:14px;
+text-decoration:none;
+color:#cfd3e2;
+}
+
+.socials{
+display:flex;
+gap:16px;
+margin-top:20px;
+}
+
+.socials a{
+width:50px;
+height:50px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(216,60,255,.08);
+
+border:1px solid rgba(216,60,255,.4);
+
+font-size:22px;
+
+text-decoration:none;
+
+transition:.3s;
+}
+
+.socials a:hover{
+background:#d83cff;
+transform:translateY(-4px);
+}
+
+.footer-bottom{
+padding:20px 60px;
+border-top:1px solid rgba(255,255,255,.08);
+
+display:flex;
+justify-content:space-between;
+
+font-size:14px;
+color:#8e95ac;
+}
+
 /* RESPONSIVO */
-/* ========================= */
 
-@media(max-width:1200px){
+@media(max-width:1100px){
 
-  .services-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+.services-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.project:not(.active){
+display:none;
+}
 
 }
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-  .portfolio-grid{
-    grid-template-columns:1fr;
-  }
+header{
+padding:20px;
+flex-direction:column;
+height:auto;
+gap:20px;
+}
 
-  .about-container{
-    grid-template-columns:1fr;
-  }
+nav{
+display:none;
+}
 
-  .about-image{
-    height:560px;
-    order:-1;
-  }
+.hero{
+flex-direction:column;
+min-height:auto;
+padding:90px 20px 50px;
+background:linear-gradient(180deg,rgba(3,7,20,.95) 0%,rgba(3,7,20,.85) 100%);
+}
 
-  .footer{
-    flex-direction:column;
-    gap:20px;
-    text-align:center;
-  }
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:300px;
+background-image:url("assets/hero.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+z-index:1;
+}
+
+.hero-content{
+max-width:100%;
+z-index:2;
+text-align:center;
+}
+
+.hero-subtitle{
+font-size:32px;
+margin-top:300px;
+}
+
+.hero-title{
+font-size:48px;
+}
+
+.hero p{
+max-width:100%;
+margin-bottom:30px;
+}
+
+.btn-hero{
+padding:18px 32px;
+font-size:16px;
+}
+
+.section{
+padding:70px 20px;
+}
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.project.active{
+width:100%;
+aspect-ratio:4/5;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+padding:50px 20px;
+}
+
+.footer-bottom{
+padding:20px;
+flex-direction:column;
+gap:12px;
+text-align:center;
+}
+
+.cta{
+flex-direction:column;
+text-align:center;
+align-items:center;
+}
+
+.cta h2{
+font-size:38px;
+}
 
 }
 
-@media(max-width:700px){
+@media(max-width:480px){
 
-  .header{
-    height:auto;
+.hero-subtitle{
+font-size:28px;
+}
 
-    flex-direction:column;
+.hero-title{
+font-size:40px;
+}
 
-    gap:18px;
+.hero p{
+font-size:15px;
+}
 
-    padding:20px 5%;
-  }
+.section-title{
+font-size:42px;
+}
 
-  .menu{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:18px;
-  }
+.service-card h3{
+font-size:28px;
+}
 
-  .hero{
-    min-height:720px;
+.cta h2{
+font-size:28px;
+}
 
-    background-size:cover;
-    background-position:center top;
-
-    padding:170px 5% 80px;
-  }
-
-  .hero h2{
-    font-size:48px;
-  }
-
-  .services-grid{
-    grid-template-columns:1fr;
-  }
-
-  .services-top h3,
-  .portfolio-top h3,
-  .about-content h3{
-    font-size:30px;
-  }
-
-  .portfolio-card{
-    aspect-ratio:16 / 9;
-  }
-
-  .about{
-    padding:70px 0;
-  }
-
-  .about-band{
-    min-height:auto;
-    padding:70px 0;
-  }
-
-  .about-content p{
-    font-size:15px;
-  }
-
-  .about-image{
-    height:480px;
-  }
-
-  .about-btn,
-  .btn-hero,
-  .btn-header{
-    width:100%;
-  }
+.cta .btn-hero{
+font-size:16px;
+padding:18px 28px;
+}
 
 }
 
@@ -734,204 +731,374 @@ body{
 
 <body>
 
-<header class="header">
+<header>
 
-  <a href="#" class="logo">
+<div class="logo">
 
-    <img src="./assets/logo.png" alt="Logo">
+<img src="assets/logo.png" alt="Logo">
 
-    <span>PORTIFÓLIO 2026</span>
+<h1>SEU LOGO</h1>
 
-  </a>
+</div>
 
-  <nav class="menu">
-    <a href="#">Início</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#portfolio">Portfólio</a>
-    <a href="#">Depoimentos</a>
-    <a href="#">Contato</a>
-  </nav>
+<nav>
 
-  <a class="btn-header" href="https://wa.me/5591982099096" target="_blank">
-    FALE NO WHATSAPP
-  </a>
+<a href="#">Início</a>
+<a href="#">Sobre</a>
+<a href="#">Serviços</a>
+<a href="#">Portfólio</a>
+<a href="#">Contato</a>
+
+</nav>
+
+<a href="https://wa.me/5591982099096" class="btn-header" target="_blank">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.318-2.964.916l-.212.126-2.192-.577.584 2.151-.138.22a4.908 4.908 0 00-.747 2.95c0 2.718 2.212 4.925 4.93 4.925 1.314 0 2.552-.504 3.476-1.422.924-.918 1.435-2.156 1.435-3.504 0-2.719-2.211-4.925-4.93-4.925m0-2.604c1.504 0 2.918.576 3.976 1.634 1.059 1.058 1.641 2.472 1.641 3.976 0 3.087-2.514 5.598-5.617 5.598-1.384 0-2.693-.525-3.679-1.483l-2.627.689.703-2.566c-1.054-1.064-1.635-2.473-1.635-3.979 0-3.087 2.513-5.598 5.617-5.598" fill="#d83cff"/>
+</svg>
+CHAME NO WHATSAPP
+</a>
 
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <h2>
-      IMAGENS QUE ATRAEM E CONECTAM PESSOAS
-    </h2>
+<h2 class="hero-subtitle">
 
-    <p>
-      Transformo ideias em identidades visuais marcantes, interfaces modernas e conteúdos criativos que fortalecem marcas, geram conexão e fazem sua presença digital se destacar.
-    </p>
+</h2>
 
-    <a class="btn-hero" href="https://wa.me/5591982099096" target="_blank">
-      FALE COMIGO AGORA
-    </a>
+<h1 class="hero-title">
+TRANSFORMANDO IDEIAS EM DESIGNS INCRÍVEIS
+</h1>
 
-  </div>
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</p>
 
-</section>
+<a href="https://wa.me/5591982099096" class="btn-hero" target="_blank">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.318-2.964.916l-.212.126-2.192-.577.584 2.151-.138.22a4.908 4.908 0 00-.747 2.95c0 2.718 2.212 4.925 4.93 4.925 1.314 0 2.552-.504 3.476-1.422.924-.918 1.435-2.156 1.435-3.504 0-2.719-2.211-4.925-4.93-4.925m0-2.604c1.504 0 2.918.576 3.976 1.634 1.059 1.058 1.641 2.472 1.641 3.976 0 3.087-2.514 5.598-5.617 5.598-1.384 0-2.693-.525-3.679-1.483l-2.627.689.703-2.566c-1.054-1.064-1.635-2.473-1.635-3.979 0-3.087 2.513-5.598 5.617-5.598" fill="#d83cff"/>
+</svg>
+FALE COMIGO AGORA
+</a>
 
-<!-- SERVIÇOS -->
-
-<section class="services" id="servicos">
-
-  <div class="services-top">
-
-    <span>SERVIÇOS</span>
-
-    <h3>
-      SOLUÇÕES QUE GERAM RESULTADOS
-    </h3>
-
-    <p>
-      Crio projetos visuais modernos, experiências digitais e conteúdos criativos
-      para fortalecer marcas e gerar conexão com o público.
-    </p>
-
-  </div>
-
-  <div class="services-grid">
-
-    <div class="service-card">
-      <img src="./assets/designergrafico.png" class="service-img">
-    </div>
-
-    <div class="service-card">
-      <img src="./assets/python.png" class="service-img">
-    </div>
-
-    <div class="service-card">
-      <img src="./assets/front.png" class="service-img">
-    </div>
-
-    <div class="service-card">
-      <img src="./assets/socialmedia.png" class="service-img">
-    </div>
-
-  </div>
+</div>
 
 </section>
 
-<!-- PORTFÓLIO -->
+<section class="section">
 
-<section class="portfolio" id="portfolio">
+<span class="section-label">
+SERVIÇOS
+</span>
 
-  <div class="portfolio-top">
+<h2 class="section-title">
+SOLUÇÕES QUE GERAM RESULTADOS
+</h2>
 
-    <span>PORTFÓLIO</span>
+<p class="section-text">
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</p>
 
-    <h3>
-      ALGUNS PROJETOS
-    </h3>
+<div class="services-grid">
 
-  </div>
+<div class="service-card">
 
-  <div class="portfolio-grid">
+<div class="service-logo"></div>
 
-    <!-- PRIMEIRO CARD COM LINK -->
+<h3>DESIGN GRÁFICO</h3>
 
-    <div class="portfolio-card">
-      <a href="projeto.html" target="_blank">
-        <img src="./assets/designergrafico.png">
-      </a>
-    </div>
+<p>
+Criação de artes incríveis para sua marca se destacar.
+</p>
 
-    <div class="portfolio-card">
-      <img src="./assets/python.png">
-    </div>
+</div>
 
-    <div class="portfolio-card">
-      <img src="./assets/front.png">
-    </div>
+<div class="service-card">
 
-    <div class="portfolio-card">
-      <img src="./assets/socialmedia.png">
-    </div>
+<div class="service-logo"></div>
 
-    <div class="portfolio-card">
-      <img src="./assets/hero.png">
-    </div>
+<h3>SOCIAL MEDIA</h3>
 
-    <div class="portfolio-card">
-      <img src="./assets/designergrafico.png">
-    </div>
+<p>
+Conteúdo estratégico para redes sociais que engaja.
+</p>
 
-  </div>
+</div>
 
-</section>
+<div class="service-card">
 
-<!-- SOBRE -->
+<div class="service-logo"></div>
 
-<section class="about" id="sobre">
+<h3>WEBSITES</h3>
 
-  <div class="about-band">
+<p>
+Desenvolvimento de websites modernos, rápidos e responsivos.
+</p>
 
-    <div class="about-container">
+</div>
 
-      <div class="about-content">
+<div class="service-card">
 
-        <span>SOBRE MIM</span>
+<div class="service-logo"></div>
 
-        <h3>
-          QUEM SOU EU
-        </h3>
+<h3>PÔSTERES</h3>
 
-        <p>
-          Sou Arthur Borges Gomes, designer gráfico, social media e desenvolvedor de páginas web. Trabalho criando identidades visuais, artes profissionais, interfaces modernas, automações em Python e soluções digitais para marcas que querem se destacar.
-        </p>
+<p>
+Pôsteres criativos que comunicam sua mensagem.
+</p>
 
-        <p>
-          Meu objetivo é transformar ideias em imagens que atraem, conectam pessoas e fortalecem a presença digital de negócios, projetos e profissionais.
-        </p>
+</div>
 
-        <a href="https://wa.me/5591982099096" target="_blank" class="about-btn">
-          FALE COMIGO AGORA
-        </a>
-
-      </div>
-
-      <div class="about-image">
-
-        <img
-          src="./assets/eu.png"
-          alt="Arthur Borges"
-        >
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
-<!-- FOOTER -->
+<section class="section">
 
-<footer class="footer">
+<span class="section-label">
+PORTFÓLIO
+</span>
 
-  <div class="footer-logo">
+<h2 class="section-title">
+ALGUNS PROJETOS
+</h2>
 
-    <img src="./assets/logo.png" alt="Logo">
+<div class="portfolio-wrapper">
 
-    <span>PORTIFÓLIO 2026</span>
+<div class="arrow" id="prev">
+❮
+</div>
 
-  </div>
+<div class="portfolio-items">
 
-  <p>
-    © 2026 • Arthur Borges Gomes • Todos os direitos reservados.
-  </p>
+<div class="project">
+<a href="https://www.behance.net/gallery/249919041/SOCIAL-MEDIA-Nexo-Provedor-de-Internet" target="_blank">
+<img src="assets/portfolio1.png" alt="">
+</a>
+</div>
+
+<div class="project">
+<img src="assets/portfolio2.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio3.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio4.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio5.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio6.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio7.png" alt="">
+</div>
+
+</div>
+
+<div class="arrow" id="next">
+❯
+</div>
+
+</div>
+
+<div class="dots">
+
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="about">
+
+<div class="about-image">
+<img src="assets/eu.png" alt="">
+</div>
+
+<div class="about-content">
+
+<span class="section-label">
+SOBRE MIM
+</span>
+
+<h2 class="section-title">
+QUEM SOU EU
+</h2>
+
+<p>
+Sou Arthur Borges Gomes, designer gráfico, social media e desenvolvedor de páginas web. Trabalho criando identidades visuais, artes profissionais, interfaces modernas, automações em Python e soluções digitais para marcas que querem se destacar.</p>
+
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</p>
+
+<a href="https://wa.me/5591982099096" class="btn-hero" target="_blank">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.318-2.964.916l-.212.126-2.192-.577.584 2.151-.138.22a4.908 4.908 0 00-.747 2.95c0 2.718 2.212 4.925 4.93 4.925 1.314 0 2.552-.504 3.476-1.422.924-.918 1.435-2.156 1.435-3.504 0-2.719-2.211-4.925-4.93-4.925m0-2.604c1.504 0 2.918.576 3.976 1.634 1.059 1.058 1.641 2.472 1.641 3.976 0 3.087-2.514 5.598-5.617 5.598-1.384 0-2.693-.525-3.679-1.483l-2.627.689.703-2.566c-1.054-1.064-1.635-2.473-1.635-3.979 0-3.087 2.513-5.598 5.617-5.598" fill="#d83cff"/>
+</svg>
+FALE COMIGO
+</a>
+
+</div>
+
+</div>
+
+<div class="cta">
+
+<h2>
+VAMOS TRANSFORMAR SUA IDEIA EM ALGO <span>EXTRAORDINÁRIO?</span>
+</h2>
+
+<a href="https://wa.me/5591982099096" class="btn-hero" target="_blank">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.318-2.964.916l-.212.126-2.192-.577.584 2.151-.138.22a4.908 4.908 0 00-.747 2.95c0 2.718 2.212 4.925 4.93 4.925 1.314 0 2.552-.504 3.476-1.422.924-.918 1.435-2.156 1.435-3.504 0-2.719-2.211-4.925-4.93-4.925m0-2.604c1.504 0 2.918.576 3.976 1.634 1.059 1.058 1.641 2.472 1.641 3.976 0 3.087-2.514 5.598-5.617 5.598-1.384 0-2.693-.525-3.679-1.483l-2.627.689.703-2.566c-1.054-1.064-1.635-2.473-1.635-3.979 0-3.087 2.513-5.598 5.617-5.598" fill="#d83cff"/>
+</svg>
+FALE COMIGO AGORA
+</a>
+
+</section>
+
+<footer>
+
+<div class="footer-grid">
+
+<div class="footer-column">
+
+<div class="footer-logo">
+
+<img src="assets/logo.png" alt="">
+
+<h2>SEU LOGO</h2>
+
+</div>
+
+<p>Design que comunica.</p>
+<p>Estratégia que gera resultados.</p>
+<p>Impacto que fica.</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>NAVEGAÇÃO</h3>
+
+<a href="#">Início</a>
+<a href="#">Sobre</a>
+<a href="#">Serviços</a>
+<a href="#">Portfólio</a>
+<a href="#">Contato</a>
+
+</div>
+
+<div class="footer-column">
+
+<h3>SERVIÇOS</h3>
+
+<a href="#">Design Gráfico</a>
+<a href="#">Social Media</a>
+<a href="#">Websites</a>
+<a href="#">Pôsteres</a>
+
+</div>
+
+<div class="footer-column">
+
+<h3>CONTATO</h3>
+
+<p>(91) 98209-9096</p>
+<p>seuemail@email.com</p>
+<p>Belém - PA</p>
+
+<div class="socials">
+
+<a href="#">📷</a>
+<a href="#">ⓕ</a>
+<a href="#">in</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2025 Todos os direitos reservados.
+</p>
+
+<p>
+Desenvolvido com 💜
+</p>
+
+</div>
 
 </footer>
+
+<script>
+
+const portfolioItems=document.querySelector(".portfolio-items");
+const projects=document.querySelectorAll(".project");
+const dots=document.querySelectorAll(".dot");
+
+let currentIndex=0;
+
+function updateCarousel(){
+projects.forEach((project,index)=>{
+project.classList.remove("active");
+if(index===currentIndex){
+project.classList.add("active");
+}
+});
+
+dots.forEach((dot,index)=>{
+dot.classList.remove("active");
+if(index===currentIndex){
+dot.classList.add("active");
+}
+});
+}
+
+document.getElementById("next").onclick=()=>{
+currentIndex=(currentIndex+1)%projects.length;
+const scrollAmount=currentIndex*280;
+portfolioItems.scrollTo({left:scrollAmount,behavior:'smooth'});
+updateCarousel();
+}
+
+document.getElementById("prev").onclick=()=>{
+currentIndex=(currentIndex-1+projects.length)%projects.length;
+const scrollAmount=currentIndex*280;
+portfolioItems.scrollTo({left:scrollAmount,behavior:'smooth'});
+updateCarousel();
+}
+
+setInterval(()=>{
+currentIndex=(currentIndex+1)%projects.length;
+const scrollAmount=currentIndex*280;
+portfolioItems.scrollTo({left:scrollAmount,behavior:'smooth'});
+updateCarousel();
+},5000);
+
+</script>
 
 </body>
 </html>
