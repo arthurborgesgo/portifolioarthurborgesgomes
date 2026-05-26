@@ -328,6 +328,7 @@ box-shadow:
 0 0 20px rgba(216,60,255,.6);
 
 transition:.3s;
+z-index:10;
 }
 
 .arrow:hover{
@@ -341,7 +342,36 @@ align-items:center;
 overflow-x:auto;
 scroll-behavior:smooth;
 padding:20px 0;
-animation:scrollLeft 80s linear infinite;
+}
+
+.carousel-1{
+animation:scrollRight 120s linear infinite;
+}
+
+.carousel-2{
+animation:scrollLeft 60s linear infinite;
+}
+
+.carousel-3{
+animation:scrollRight 120s linear infinite;
+}
+
+@keyframes scrollRight{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(100%);
+}
+}
+
+@keyframes scrollLeft{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(-100%);
+}
 }
 
 .portfolio-items::-webkit-scrollbar{
@@ -360,15 +390,6 @@ border-radius:10px;
 
 .portfolio-items::-webkit-scrollbar-thumb:hover{
 background:rgba(216,60,255,.8);
-}
-
-@keyframes scrollLeft{
-from{
-transform:translateX(0);
-}
-to{
-transform:translateX(-100%);
-}
 }
 
 .project{
@@ -664,9 +685,36 @@ padding:70px 20px;
 grid-template-columns:1fr;
 }
 
-.project.active{
-width:100%;
+.portfolio-wrapper{
+gap:12px;
+}
+
+.arrow{
+width:45px;
+height:45px;
+font-size:20px;
+flex-shrink:0;
+}
+
+.project{
+display:block !important;
+width:250px;
 aspect-ratio:4/5;
+}
+
+.project.active{
+width:250px;
+aspect-ratio:4/5;
+}
+
+.portfolio-items{
+flex:1;
+overflow-x:auto;
+animation:none !important;
+}
+
+.carousel-1, .carousel-2, .carousel-3{
+animation:none !important;
 }
 
 .footer-grid{
@@ -737,7 +785,7 @@ padding:18px 28px;
 
 <img src="assets/logo.png" alt="Logo">
 
-<h1></h1>
+<h1>SEU LOGO</h1>
 
 </div>
 
@@ -772,9 +820,6 @@ CHAME NO WHATSAPP
 TRANSFORMANDO IDEIAS EM DESIGNS INCRÍVEIS
 </h1>
 
-<p>
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
-</p>
 
 <a href="https://wa.me/5591982099096" class="btn-hero" target="_blank">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:8px;">
@@ -865,13 +910,10 @@ PORTFÓLIO
 ALGUNS PROJETOS
 </h2>
 
+<!-- Carrossel 1 - Lento para Direita -->
 <div class="portfolio-wrapper">
 
-<div class="arrow" id="prev">
-❮
-</div>
-
-<div class="portfolio-items">
+<div class="portfolio-items carousel-1">
 
 <div class="project">
 <a href="https://www.behance.net/gallery/249919041/SOCIAL-MEDIA-Nexo-Provedor-de-Internet" target="_blank">
@@ -905,21 +947,79 @@ ALGUNS PROJETOS
 
 </div>
 
-<div class="arrow" id="next">
-❯
+</div>
+
+<!-- Carrossel 2 - Mais rápido para Esquerda -->
+<div class="portfolio-wrapper">
+
+<div class="portfolio-items carousel-2">
+
+<div class="project">
+<img src="assets/portfolio2.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio3.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio4.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio5.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio6.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio7.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio1.png" alt="">
 </div>
 
 </div>
 
-<div class="dots">
+</div>
 
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
+<!-- Carrossel 3 - Lento para Direita (mesma velocidade do primeiro) -->
+<div class="portfolio-wrapper">
+
+<div class="portfolio-items carousel-3">
+
+<div class="project">
+<img src="assets/portfolio3.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio4.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio5.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio6.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio7.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio1.png" alt="">
+</div>
+
+<div class="project">
+<img src="assets/portfolio2.png" alt="">
+</div>
+
+</div>
 
 </div>
 
@@ -986,7 +1086,7 @@ FALE COMIGO AGORA
 
 <img src="assets/logo.png" alt="">
 
-<h2></h2>
+<h2>SEU LOGO</h2>
 
 </div>
 
@@ -1054,49 +1154,6 @@ Desenvolvido com 💜
 </footer>
 
 <script>
-
-const portfolioItems=document.querySelector(".portfolio-items");
-const projects=document.querySelectorAll(".project");
-const dots=document.querySelectorAll(".dot");
-
-let currentIndex=0;
-
-function updateCarousel(){
-projects.forEach((project,index)=>{
-project.classList.remove("active");
-if(index===currentIndex){
-project.classList.add("active");
-}
-});
-
-dots.forEach((dot,index)=>{
-dot.classList.remove("active");
-if(index===currentIndex){
-dot.classList.add("active");
-}
-});
-}
-
-document.getElementById("next").onclick=()=>{
-currentIndex=(currentIndex+1)%projects.length;
-const scrollAmount=currentIndex*280;
-portfolioItems.scrollTo({left:scrollAmount,behavior:'smooth'});
-updateCarousel();
-}
-
-document.getElementById("prev").onclick=()=>{
-currentIndex=(currentIndex-1+projects.length)%projects.length;
-const scrollAmount=currentIndex*280;
-portfolioItems.scrollTo({left:scrollAmount,behavior:'smooth'});
-updateCarousel();
-}
-
-setInterval(()=>{
-currentIndex=(currentIndex+1)%projects.length;
-const scrollAmount=currentIndex*280;
-portfolioItems.scrollTo({left:scrollAmount,behavior:'smooth'});
-updateCarousel();
-},5000);
 
 </script>
 
